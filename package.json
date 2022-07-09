@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write \"**/*.{json,css,scss,md,html,ts}\"",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm husky install",
     "prepare": "husky install"
   },
   "keywords": [],
