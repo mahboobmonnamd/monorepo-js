@@ -5,6 +5,11 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write \"**/*.{json,css,scss,md,html,ts}\"",
+    "git:clean": "git clean -dfX",
+    "pnpm:clean": "pnpm rimraf pnpm-lock.yaml node_modules",
+    "full:clean": "pnpm git:clean && pnpm pnpm:clean",
+    "prepack": "pinst --enables",
+    "postpack": "pinst --enable",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "pnpm husky install",
     "prepare": "husky install"
@@ -19,9 +24,11 @@
     ]
   },
   "devDependencies": {
+    "@changesets/changelog-git": "^0.1.11",
     "@changesets/cli": "^2.23.1",
+    "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "husky": "^8.0.0"
+    "rimraf": "^3.0.2"
   }
 }
