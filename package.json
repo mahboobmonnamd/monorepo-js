@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write \"**/*.{json,css,scss,md,html,ts}\""
+    "format": "prettier --write \"**/*.{json,css,scss,md,html,ts}\"",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Mahboob",
