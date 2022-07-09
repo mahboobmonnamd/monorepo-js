@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write \"**/*.{json,css,scss,md,html,ts}\"",
-    "git:clean": "git clean -dfX",
-    "pnpm:clean": "pnpm rimraf pnpm-lock.yaml node_modules",
-    "full:clean": "pnpm git:clean && pnpm pnpm:clean",
+    "js:format": "prettier --write \"**/*.{json,css,scss,md,html,ts}\"",
+    "js:git:clean": "git clean -dfX",
+    "js:pnpm:clean": "pnpm rimraf pnpm-lock.yaml node_modules",
+    "js:full:clean": "pnpm git:clean && pnpm pnpm:clean",
+    "js:install": "pnpm install --fix-lockfile",
+    "js:install:ci": "pnpm install --no-optional --frozen-lockfile --ignore-scripts",
     "prepack": "pinst --enables",
     "postpack": "pinst --enable",
     "preinstall": "npx only-allow pnpm",
@@ -19,7 +21,7 @@
   "license": "ISC",
   "lint-staged": {
     "*.{ts, tsx}": [
-      "npm run format",
+      "npm run js:format",
       "eslint --cache --fix"
     ]
   },
@@ -28,7 +30,16 @@
     "@changesets/cli": "^2.23.1",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "eslint": "^8.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
