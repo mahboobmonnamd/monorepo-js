@@ -8,6 +8,22 @@ npm i -g pnpm
 pnpm i
 ```
 
+### pnpm commands
+- To install all the packages in package.json
+```
+pnpm i -r
+```
+- To install it dependencies 
+```bash
+pnpm add <package name>
+```
+
+-To add package to particular project
+```bash
+pnpm add <package name> --filter <project name>
+```
+> https://pnpm.io/cli/add
+
 ### Changesets flow
 
 1. Make changes to code
@@ -16,3 +32,4 @@ pnpm i
 4. Merge PR
 5. `pnpx changeset version` to bump versions and generate changelogs
 6. Publish to npm via `pnpm publish -r` or `changeset publish`
+
