@@ -22,7 +22,8 @@
   "lint-staged": {
     "*.{ts, tsx}": [
       "npm run js:format",
-      "eslint --cache --fix"
+      "eslint --cache --fix .",
+      "git add ."
     ]
   },
   "devDependencies": {

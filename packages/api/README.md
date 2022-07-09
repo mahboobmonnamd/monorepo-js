@@ -5,12 +5,12 @@ In future if we want to make multiple services it can be added to apps as new pr
 Before making commit, run the following
 `pnpm changeset`
 
-![alt scaffloding-image](https://raw.githubusercontent.com/mahboobmonnamd/monorepo-nestjs/master/diagrams/images/scaffolding.png)
+![alt scaffloding-image](https://raw.githubusercontent.com/mahboobmonnamd/monorepo-js/master/diagrams/images/scaffolding.png)
 
 
 Note: 
 If path update is not working properly in vscode. Press CMD+SHIFT+P select "Typescript Reload Project"
-![alt reload-image](https://raw.githubusercontent.com/mahboobmonnamd/monorepo-nestjs/master/diagrams/images/reload-project.png)
+![alt reload-image](https://raw.githubusercontent.com/mahboobmonnamd/monorepo-js/master/diagrams/images/reload-project.png)
 
 
 should check with this

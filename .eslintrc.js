@@ -6,7 +6,6 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'prettier',
     'plugin:markdown/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
@@ -26,7 +25,6 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    'prettier/prettier': 'error',
     'linebreak-style': 1,
     quotes: ['error', 'single'],
     semi: ['error', 'always'],

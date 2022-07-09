@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { ValueObject, Result } from '@ddd/ddd';
 
 export interface UserEmailProps {
