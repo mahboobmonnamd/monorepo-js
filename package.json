@@ -26,6 +26,9 @@
   "devDependencies": {
     "@changesets/changelog-git": "^0.1.11",
     "@changesets/cli": "^2.23.1",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "eslint": "^8.0.1",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
