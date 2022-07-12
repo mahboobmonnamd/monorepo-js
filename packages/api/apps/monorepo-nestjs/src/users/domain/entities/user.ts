@@ -1,16 +1,11 @@
 import { Entity, Result, UniqueEntityID } from '@ddd/ddd';
+import { UserProps } from '../dto/user.dto';
 import { UserEmail } from '../value-objects/email';
 import { UserId } from '../value-objects/userId';
 
 interface UserDomainProps {
   name: string;
   email: UserEmail;
-  isVerified?: boolean;
-}
-
-interface UserProps {
-  name: string;
-  email: string;
   isVerified?: boolean;
 }
 

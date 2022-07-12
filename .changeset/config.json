@@ -1,9 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.0.1/schema.json",
-  "changelog": [
-    "@changesets/changelog-git",
-    { "repo": "mahboobmonnamd/monorepo-js" }
-  ],
+  "changelog": ["@changesets/changelog-git", { "repo": "mahboobmonnamd/monorepo-js" }],
   "commit": false,
   "fixed": [],
   "linked": [],

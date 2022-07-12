@@ -1,4 +1,4 @@
-export abstract class CreateUserDTO {
+export interface UserProps {
   name: string;
   email: string;
   isVerified?: boolean;

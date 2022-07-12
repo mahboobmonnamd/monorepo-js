@@ -19,10 +19,7 @@ export class Guard {
     return Result.ok<GuardResponse>();
   }
 
-  public static greaterThan(
-    minValue: number,
-    actualValue: number,
-  ): Result<GuardResponse> {
+  public static greaterThan(minValue: number, actualValue: number): Result<GuardResponse> {
     return actualValue > minValue
       ? Result.ok<GuardResponse>()
       : Result.fail<GuardResponse>(
@@ -30,28 +27,19 @@ export class Guard {
         );
   }
 
-  public static againstAtLeast(
-    numChars: number,
-    text: string,
-  ): Result<GuardResponse> {
+  public static againstAtLeast(numChars: number, text: string): Result<GuardResponse> {
     return text.length >= numChars
       ? Result.ok<GuardResponse>()
       : Result.fail<GuardResponse>(`Text is not at least ${numChars} chars.`);
   }
 
-  public static againstAtMost(
-    numChars: number,
-    text: string,
-  ): Result<GuardResponse> {
+  public static againstAtMost(numChars: number, text: string): Result<GuardResponse> {
     return text.length <= numChars
       ? Result.ok<GuardResponse>()
       : Result.fail<GuardResponse>(`Text is greater than ${numChars} chars.`);
   }
 
-  public static againstNullOrUndefined(
-    argument: any,
-    argumentName: string,
-  ): Result<GuardResponse> {
+  public static againstNullOrUndefined(argument: any, argumentName: string): Result<GuardResponse> {
     if (argument === null || argument === undefined) {
       return Result.fail<GuardResponse>(`${argumentName} is null or undefined`);
     } else {
@@ -59,14 +47,9 @@ export class Guard {
     }
   }
 
-  public static againstNullOrUndefinedBulk(
-    args: GuardArgumentCollection,
-  ): Result<GuardResponse> {
+  public static againstNullOrUndefinedBulk(args: GuardArgumentCollection): Result<GuardResponse> {
     for (const arg of args) {
-      const result = this.againstNullOrUndefined(
-        arg.argument,
-        arg.argumentName,
-      );
+      const result = this.againstNullOrUndefined(arg.argument, arg.argumentName);
       if (result.isFailure) return result;
     }
 
@@ -104,9 +87,7 @@ export class Guard {
   ): Result<GuardResponse> {
     const isInRange = num >= min && num <= max;
     if (!isInRange) {
-      return Result.fail<GuardResponse>(
-        `${argumentName} is not within range ${min} to ${max}.`,
-      );
+      return Result.fail<GuardResponse>(`${argumentName} is not within range ${min} to ${max}.`);
     } else {
       return Result.ok<GuardResponse>();
     }
@@ -126,9 +107,7 @@ export class Guard {
     }
 
     if (failingResult) {
-      return Result.fail<GuardResponse>(
-        `${argumentName} is not within the range.`,
-      );
+      return Result.fail<GuardResponse>(`${argumentName} is not within the range.`);
     } else {
       return Result.ok<GuardResponse>();
     }

@@ -1,6 +1,5 @@
-export class GetUserDTO {
+import { UserProps } from '@app/users/domain/dto/user.dto';
+
+export interface GetUserDTO extends UserProps {
   userId: string;
-  name: string;
-  email: string;
-  isVerified: boolean;
 }

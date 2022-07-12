@@ -10,14 +10,11 @@ type Response = Either<Result<any> | Result<void>, Result<GetUserDTO[]>>;
 export class GetAllUsersUseCases {
   constructor(@Inject('UserRepo') private userRepo: IUserRepo) {}
   async execute(): Promise<Response> {
-    const users = await this.userRepo.findAll();
-    // To ensure we have the right domain model, we can create the domain model here.
-    // TODO: Check do we need domain model creation here. then send to mapper.
-    const userModel = User.create(users[0]);
-    if (userModel.isFailure) {
+    const user = await this.userRepo.findAll();
+    if (user.isFailure) {
       return left(Result.fail('Domain model creation failed'));
     }
-    const response = new UserMap().toRawUser(userModel.getValue());
+    const response = new UserMap().toRawUser(user.getValue());
     return right(Result.ok<GetUserDTO[]>(response));
   }
 }

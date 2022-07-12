@@ -21,9 +21,7 @@ export class UserResolver {
   }
 
   @Mutation(() => Boolean)
-  async createUser(
-    @Args('createUserData') createUserInput: CreateUserInput,
-  ): Promise<boolean> {
+  async createUser(@Args('createUserData') createUserInput: CreateUserInput): Promise<boolean> {
     const response = await this.createUserUserCase.execute(createUserInput);
     if (response.isRight()) {
       return true;

@@ -8,10 +8,7 @@ import { join } from 'path';
     UsersModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: join(
-        process.cwd(),
-        'apps/monorepo-nestjs/src/schema.gql',
-      ),
+      autoSchemaFile: join(process.cwd(), 'apps/monorepo-nestjs/src/schema.gql'),
       sortSchema: true,
     }),
   ],
